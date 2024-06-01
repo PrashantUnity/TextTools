@@ -2,10 +2,7 @@ name: publish
 
 on:
   push:
-    branches: [ "master" ] 
-# permissions:
-#     id-token: write
-#     contents: read
+    branches: [ "master" ]
 
 jobs:
   build:

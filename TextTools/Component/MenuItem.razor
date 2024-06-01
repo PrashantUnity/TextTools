@@ -1,0 +1,36 @@
+﻿<MudPaper 
+    Class="d-flex flex-row flex-grow-1" 
+    Style="border-width:1px;border-color: black;" 
+    Elevation="@elevation"
+    @onmouseenter="OnMouseHover" 
+    @onmouseleave="OnMouseExit">
+
+    <MudImage Src="@Item.ImageUrl" Height="130" Alt="Swedish Farm House" Style="background:transparent" Elevation="0" />
+    <MudPaper Class="d-flex flex-column flex-grow-1 ml-4 " Style="background:transparent" Elevation="0">
+        <MudPaper Width="100%" Height="30px" Style="background:transparent" Elevation="0">
+            <MudText>
+                @Item.Heading
+            </MudText>
+        </MudPaper>
+        <MudPaper Width="100%" Height="100px" Style="background:transparent" Elevation="0">
+            <MudText GutterBottom=false>
+                @Item.ShortDescrption
+            </MudText>
+        </MudPaper>
+    </MudPaper>
+</MudPaper>
+
+@code{
+    [Parameter] public Tool Item{get;set;}
+    int elevation = 1;
+    void OnMouseHover()
+    {
+        elevation = 8;
+        StateHasChanged();
+    }
+    void OnMouseExit()
+    {
+        elevation = 1;
+        StateHasChanged();
+    }
+}

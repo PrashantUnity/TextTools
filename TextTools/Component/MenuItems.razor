@@ -1,0 +1,15 @@
+﻿<br />
+<br />
+<br />
+<MudText Typo="Typo.h4">
+    @ToolHeading
+</MudText>
+<br />
+<MudGrid Class="center-container"> 
+    @foreach (var item in ToolsList)
+    {
+        <MudItem xs="12" md="6" lg="4" xl="3" Class="rounded-lg">
+            <MenuItem Item="@item"/>
+        </MudItem>
+    }
+</MudGrid>

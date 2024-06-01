@@ -1,49 +1,14 @@
 ﻿@page "/"
 
 <PageTitle>Text Tools</PageTitle>
+<SlidingBubble/>
 
 <MudContainer Class="center-container">
+    
     <MudPaper MinWidth="90vw" Style="background:transparent" Elevation="0">
-        <MudGrid Class="center-container">
-            @for(var i =0; i<10;i++)
-            {
-                <MudItem xs="12" sm="6" lg="4" xl="3" Class="rounded-lg">
-                    <MudPaper Class="d-flex flex-row flex-grow-1" Style="background:transparent" Elevation="0">
-                        <MudImage Src="https://picsum.photos/150" Height="100" Alt="Swedish Farm House" Style="background:transparent" Elevation="0" />
-                        <MudPaper Class="d-flex flex-column flex-grow-1" Style="background:transparent" Elevation="0">
-                            <MudPaper Width="100%" Height="36px" Style="background:transparent" Elevation="0">
-                                <MudText>
-                                    Heading
-                                </MudText>
-                            </MudPaper>
-                            <MudPaper Width="100%" Height="64px" Style="background:transparent" Elevation="0">
-                                <MudText>
-                                    Sort a list in alphabetical, natural, reverse, or random order.
-                                </MudText>
-                            </MudPaper>
-                        </MudPaper>
-                    </MudPaper>
-                </MudItem> 
-            }
-           
-        </MudGrid>
-        <MudPaper Class="d-flex flex-row flex-grow-1 gap-1 pa-1" Elevation="0"> 
-                <MudPaper Class="mud-theme-success" Width="64px" Height="64px" /> 
-        </MudPaper> 
+        @* <MudPaper Height="100px" Style="background:transparent" Elevation="0"> 
+        </MudPaper> *@
+        <MenuItems ToolsList="@basicTools" ToolHeading="BASIC TOOLS"/>
+        <MenuItems ToolsList="@textManipulationTools" ToolHeading="TEXT MANIPULATION" />
     </MudPaper>
-</MudContainer>
-
-@code{
-
-}
-
-
-
-
-<style>
-    .center-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
+</MudContainer> 
